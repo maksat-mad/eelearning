@@ -1,0 +1,12 @@
+.courses {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  padding-top: 20px;
+}
