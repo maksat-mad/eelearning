@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="login">
+  <div class="block">
+    @if (true) {
+      <form class="form">
+        <h3>Login</h3>
+
+        <mat-form-field class="full-width">
+          <mat-label>Login</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput>
+        </mat-form-field>
+
+        <button mat-flat-button class="full-width">Login</button>
+
+        <div class="error-text">Invalid login or password</div>
+      </form>
+    }
+    @else {
+      <mat-spinner style="margin-top: 100px;"></mat-spinner>
+    }
+  </div>
+</div>
