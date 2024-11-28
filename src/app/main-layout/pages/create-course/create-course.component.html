@@ -1,1 +1,23 @@
-<p>create-course works!</p>
+<div class="create-course">
+  <div class="block">
+    <form class="form">
+      <h3>Create Course</h3>
+
+      <mat-form-field class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+
+      <button mat-flat-button class="full-width">Create Course</button>
+
+      @if (true) {
+        <div class="error-text">Course already exists</div>
+      }
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.create-course {
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  margin-top: 70px;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-text {
+  margin-top: 15px;
+  color: crimson;
+  font-size: 15px;
+  font-style: italic;
+}
