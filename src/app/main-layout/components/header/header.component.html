@@ -1,7 +1,12 @@
 <div class="topnav">
-  <a routerLink="courses" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-  <a routerLink="create-course" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Course</a>
-  <a routerLink="create-student" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Student</a>
-  <a routerLink="progress" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Student Progress</a>
-  <a href="/login">Log Out</a>
+  <div>
+    <a routerLink="courses" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="create-course" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Course</a>
+    <a routerLink="create-student" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Student</a>
+    <a routerLink="progress" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Student Progress</a>
+  </div>
+  <div>
+    <span>{{ true ? 'Instructor' : 'Student' }}</span>
+    <button>Log Out</button>
+  </div>
 </div>
