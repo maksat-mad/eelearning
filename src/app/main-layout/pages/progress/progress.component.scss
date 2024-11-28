@@ -1,0 +1,26 @@
+.progress {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  padding-top: 20px;
+}
+
+.progress-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login {
+  font-size: 20px;
+}
+
+.score {
+  color: #5E47BC;
+  font-size: 20px;
+}
