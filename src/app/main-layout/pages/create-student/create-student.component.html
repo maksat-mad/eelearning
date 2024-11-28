@@ -1,1 +1,23 @@
-<p>create-student works!</p>
+<div class="create-student">
+  <div class="block">
+    <form class="form">
+      <h3>Create Student</h3>
+
+      <mat-form-field class="full-width">
+        <mat-label>Login</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <button mat-flat-button class="full-width">Create Student</button>
+
+      @if (true) {
+        <div class="error-text">Student already exists</div>
+      }
+    </form>
+  </div>
+</div>
