@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
@@ -12,11 +12,15 @@ import { AuthService } from '../services/auth.service';
   styleUrl: './login.component.scss',
   standalone: true,
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   username = '';
   password = '';
 
   authService = inject(AuthService);
+
+  ngOnInit() {
+    this.authService.authError.next(false);
+  }
 
   login() {
     this.authService.login(this.username, this.password);

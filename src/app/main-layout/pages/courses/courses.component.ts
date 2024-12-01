@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { ApiService } from '../../../services/api.service';
+import { CourseService } from '../../../services/course.service';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -12,10 +12,10 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
 })
 export class CoursesComponent implements OnInit {
-  apiService = inject(ApiService);
+  CourseService = inject(CourseService);
   router = inject(Router);
 
   ngOnInit() {
-    this.apiService.getCourses();
+    this.CourseService.getCourses();
   }
 }
