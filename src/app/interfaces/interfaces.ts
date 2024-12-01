@@ -10,3 +10,10 @@ export interface Course {
   title: string,
   description: string,
 }
+
+export interface UserProgress {
+  progress_id: number,
+  quiz_scores: number,
+  username: string,
+  user: number,
+}

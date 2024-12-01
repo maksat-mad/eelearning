@@ -6,21 +6,23 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 300px;
+  gap: 10px;
+  width: 400px;
   padding-top: 20px;
 }
 
 .progress-card {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.login {
-  font-size: 20px;
+.username {
+  font-size: 25px;
 }
 
 .score {
   color: #5E47BC;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
 }

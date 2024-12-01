@@ -5,18 +5,21 @@
 
       <mat-form-field class="full-width">
         <mat-label>Login</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
 
       <mat-form-field class="full-width">
         <mat-label>Password</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
 
-      <button mat-flat-button class="full-width">Create Student</button>
+      <button mat-flat-button class="full-width" (click)="createStudent()">Create Student</button>
 
-      @if (true) {
+      @if (studentService.createStudentError.getValue()) {
         <div class="error-text">Student already exists</div>
+      }
+      @if (studentService.createStudentSuccess.getValue()) {
+        <div class="success-text">Student created successfully</div>
       }
     </form>
   </div>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { StudentService } from '../../../services/student.service';
 
 @Component({
   selector: 'app-progress',
@@ -9,5 +10,9 @@ import { MatCardModule } from '@angular/material/card';
   standalone: true,
 })
 export class ProgressComponent {
+  studentService = inject(StudentService);
 
+  ngOnInit() {
+    this.studentService.getUserProgresses();
+  }
 }

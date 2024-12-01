@@ -12,10 +12,10 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
 })
 export class CoursesComponent implements OnInit {
-  CourseService = inject(CourseService);
+  courseService = inject(CourseService);
   router = inject(Router);
 
   ngOnInit() {
-    this.CourseService.getCourses();
+    this.courseService.getCourses();
   }
 }

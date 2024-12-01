@@ -2,10 +2,12 @@
   <div class="wrapper">
     <mat-card appearance="outlined">
       <mat-card-content>
-        <div class="progress-card">
-          <div class="login">1) Student1</div>
-          <div class="score">55</div>
-        </div>
+        @for (progress of studentService.userProgresses.getValue(); track $index) {
+          <div class="progress-card">
+            <div class="username">{{ $index + 1 }}) {{ progress.username }}</div>
+            <div class="score">{{ progress.quiz_scores }}</div>
+          </div>
+        }
       </mat-card-content>
     </mat-card>
   </div>
