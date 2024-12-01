@@ -1,19 +1,17 @@
 <div class="courses">
   <div class="wrapper">
-    <mat-card appearance="outlined">
-      <mat-card-header>
-        <mat-card-title>Poodle</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </p>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button mat-button>Learn More</button>
-      </mat-card-actions>
-    </mat-card>
+    @for(course of apiService.courses.getValue(); track $index) {
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ course.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ course.description }}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <a [routerLink]="['/pages/courses', course.course_id]" mat-button>Learn More</a>
+        </mat-card-actions>
+      </mat-card>
+    }
   </div>
 </div>

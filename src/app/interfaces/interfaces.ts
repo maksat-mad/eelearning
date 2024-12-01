@@ -4,3 +4,9 @@ export interface User {
   is_student: boolean,
   is_instructor: boolean,
 }
+
+export interface Course {
+  course_id: number,
+  title: string,
+  description: string,
+}
