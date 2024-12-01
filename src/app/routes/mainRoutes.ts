@@ -1,5 +1,6 @@
 import { Routes } from "@angular/router";
 import { MainLayoutComponent } from "../main-layout/main-layout.component";
+import { instructorGuard } from "../guards/instructor.guard";
 
 export const mainRoutes: Routes = [
   {
@@ -16,18 +17,21 @@ export const mainRoutes: Routes = [
         pathMatch: 'full',
         loadComponent: () => import('../main-layout/pages/create-course/create-course.component').then((c) => c.CreateCourseComponent),
         title: 'Create Course',
+        canMatch: [instructorGuard],
       },
       {
         path: 'create-student',
         pathMatch: 'full',
         loadComponent: () => import('../main-layout/pages/create-student/create-student.component').then((c) => c.CreateStudentComponent),
         title: 'Create Student',
+        canMatch: [instructorGuard],
       },
       {
         path: 'progress',
         pathMatch: 'full',
         loadComponent: () => import('../main-layout/pages/progress/progress.component').then((c) => c.ProgressComponent),
         title: 'Student Progress',
+        canMatch: [instructorGuard],
       },
       {
         path: 'courses',

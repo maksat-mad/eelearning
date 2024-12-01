@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 
 export const appRoutes: Routes = [
   {
@@ -14,6 +15,7 @@ export const appRoutes: Routes = [
   {
     path: 'pages',
     loadChildren: () => import('./routes/mainRoutes').then((routes) => routes.mainRoutes),
+    canMatch: [authGuard],
   },
   {
     path: '**',

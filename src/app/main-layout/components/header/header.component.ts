@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
 })
 export class HeaderComponent {
-
+  authService = inject(AuthService);
+  router = inject(Router);
 }

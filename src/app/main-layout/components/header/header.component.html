@@ -1,12 +1,19 @@
 <div class="topnav">
   <div>
-    <a routerLink="courses" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <a routerLink="create-course" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Course</a>
-    <a routerLink="create-student" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Student</a>
-    <a routerLink="progress" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Student Progress</a>
+    <a routerLink="courses" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courses</a>
+    @if (authService.user.getValue() && authService.user.getValue()?.is_instructor) {
+      <a routerLink="create-course" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Course</a>
+      <a routerLink="create-student" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create Student</a>
+      <a routerLink="progress" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Student Progress</a>
+    }
   </div>
   <div>
-    <span>{{ true ? 'Instructor' : 'Student' }}</span>
-    <button>Log Out</button>
+    @if (authService.user.getValue() && authService.user.getValue()?.is_instructor) {
+      <span class="instructor">Instructor</span>
+    }
+    @if (authService.user.getValue() && authService.user.getValue()?.is_student) {
+      <span class="student">{{ authService.user.getValue()?.username }}</span>
+    }
+    <button class="cursor-pointer" (click)="authService.logout()">Log Out</button>
   </div>
 </div>
