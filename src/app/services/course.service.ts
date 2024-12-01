@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, throwError } from 'rxjs';
-import { Course } from '../interfaces/interfaces';
+import { Course, CourseDetails } from '../interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,6 +10,7 @@ export class CourseService {
   courses = new BehaviorSubject<Course[]>([]);
   createCourseSuccess = new BehaviorSubject<boolean>(false);
   createCourseError = new BehaviorSubject<boolean>(false);
+  courseDetails = new BehaviorSubject<CourseDetails | null>(null);
 
   constructor(private http: HttpClient) {}
 
@@ -37,6 +38,14 @@ export class CourseService {
       .subscribe(() => {
         this.createCourseError.next(false);
         this.createCourseSuccess.next(true);
+      });
+  }
+
+  getCourseDetails(id: number) {
+    this.http.get<CourseDetails>(`/api/course/${id}`)
+      .subscribe((data: any) => {
+        this.courseDetails.next(data);
+        return data;
       });
   }
 }

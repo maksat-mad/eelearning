@@ -17,3 +17,26 @@ export interface UserProgress {
   username: string,
   user: number,
 }
+
+export interface Quiz {
+  quiz_id: number,
+  title: string,
+  course: number,
+}
+
+export interface QuizQuestions {
+  question_id: number,
+  question_text: string,
+  option_a: string,
+  option_b: string,
+  option_c: string,
+  option_d: string,
+  correct_option: 'A' | 'B' | 'C' | 'D',
+  quiz: number,
+}
+
+export interface CourseDetails {
+  course: Course,
+  quiz: Quiz[],
+  quizQuestions: QuizQuestions[],
+}
