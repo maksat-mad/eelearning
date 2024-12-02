@@ -1,0 +1,47 @@
+.course {
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin-top: 20px;
+  }
+
+  .info {
+    margin-top: 15px;
+    color: #5E47BC;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .question {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .option {
+    font-size: 16px;
+    margin-left: 15px;
+  }
+
+  .correct {
+    color: rgb(110, 169, 21);
+    font-style: italic;
+  }
+
+  .quiz-questions {
+    margin-top: 15px;
+    color: #5E47BC;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .create-quiz-question {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    width: 250px;
+  }
+}

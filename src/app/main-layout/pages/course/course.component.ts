@@ -2,10 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EMPTY, switchMap, take } from 'rxjs';
 import { CourseService } from '../../../services/course.service';
+import { AuthService } from '../../../services/auth.service';
+import { NgClass } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-course',
-  imports: [],
+  imports: [NgClass, MatButtonModule],
   templateUrl: './course.component.html',
   styleUrl: './course.component.scss',
   standalone: true,
@@ -13,6 +16,7 @@ import { CourseService } from '../../../services/course.service';
 export class CourseComponent implements OnInit {
   activatedRoute = inject(ActivatedRoute);
   courseService = inject(CourseService);
+  authService = inject(AuthService);
 
   ngOnInit() {
     this.activatedRoute.paramMap.pipe(

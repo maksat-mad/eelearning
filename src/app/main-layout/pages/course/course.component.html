@@ -1,3 +1,28 @@
-<div>
-  {{ courseService.courseDetails.getValue()?.course?.course_id }}
+<div class="course">
+  <div class="course__content">
+    <h2>{{ courseService.courseDetails.getValue()?.course?.title }}</h2>
+    <p>{{ courseService.courseDetails.getValue()?.course?.description }}</p>
+
+    <button mat-flat-button class="create-quiz-question">Create Quiz Question</button>
+
+    @if (authService.user.getValue() && authService.user.getValue()?.is_instructor) {
+      @if (courseService.courseDetails.getValue()?.quizQuestions?.length) {
+        <div class="quiz-content">
+          <div class="quiz-questions">Quiz questions</div>
+          @for (quiz of courseService.courseDetails.getValue()?.quizQuestions; track $index) {
+            <div>
+              <div class="question">{{ ($index+1) + ') ' + quiz.question_text }}</div>
+              <div class="option" [ngClass]="{'correct': quiz.correct_option === 'A'}">{{ quiz.option_a }}</div>
+              <div class="option" [ngClass]="{'correct': quiz.correct_option === 'B'}">{{ quiz.option_b }}</div>
+              <div class="option" [ngClass]="{'correct': quiz.correct_option === 'C'}">{{ quiz.option_c }}</div>
+              <div class="option" [ngClass]="{'correct': quiz.correct_option === 'D'}">{{ quiz.option_d }}</div>
+            </div>
+          }
+        </div>
+      }
+      @else {
+        <div class="info">No Quiz Questions</div>
+      }
+    }
+  </div>
 </div>
