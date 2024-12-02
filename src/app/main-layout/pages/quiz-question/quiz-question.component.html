@@ -1,0 +1,60 @@
+<div class="quiz-question">
+  <div class="block">
+    <form class="form">
+      <h3>Create <span class="success-text">{{ this.courseService.courseDetails.getValue()!.quiz[0].title }}</span> Question</h3>
+
+      @if (show) {
+        <mat-form-field class="full-width">
+          <mat-label>Question</mat-label>
+          <input matInput [(ngModel)]="question_text" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>A</mat-label>
+          <div class="option">
+            <mat-radio-button class="radio" (click)="selectOption('A')"/>
+            <input matInput [(ngModel)]="option_a" [ngModelOptions]="{standalone: true}">
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>B</mat-label>
+          <div class="option">
+            <mat-radio-button class="radio" (click)="selectOption('B')"/>
+            <input matInput [(ngModel)]="option_b" [ngModelOptions]="{standalone: true}">
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>C</mat-label>
+          <div class="option">
+            <mat-radio-button class="radio" (click)="selectOption('C')"/>
+            <input matInput [(ngModel)]="option_c" [ngModelOptions]="{standalone: true}">
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>D</mat-label>
+          <div class="option">
+            <mat-radio-button class="radio" (click)="selectOption('D')"/>
+            <input matInput [(ngModel)]="option_d" [ngModelOptions]="{standalone: true}">
+          </div>
+        </mat-form-field>
+      }
+
+      <button mat-flat-button class="full-width" (click)="createQuizQuestion()">Create Quiz Question</button>
+
+      <div style="margin-top: 10px;">
+        <a [routerLink]="['/pages/courses', this.courseService.courseDetails.getValue()!.course.course_id]" class="go-text">GO TO THE COURSE</a>
+      </div>
+
+      @if (error) {
+        <div class="error-text">{{ errorText }}</div>
+      }
+
+      @if (quizService.createQuizQuestionSuccess.getValue()) {
+        <div class="success-text">Question created successfully</div>
+      }
+    </form>
+  </div>
+</div>

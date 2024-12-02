@@ -34,6 +34,13 @@ export const mainRoutes: Routes = [
         canMatch: [instructorGuard],
       },
       {
+        path: 'quiz-question',
+        pathMatch: 'full',
+        loadComponent: () => import('../main-layout/pages/quiz-question/quiz-question.component').then((c) => c.QuizQuestionComponent),
+        title: 'Quiz Question',
+        canMatch: [instructorGuard],
+      },
+      {
         path: 'courses',
         pathMatch: 'full',
         loadComponent: () => import('../main-layout/pages/courses/courses.component').then((c) => c.CoursesComponent),

@@ -3,9 +3,11 @@
     <h2>{{ courseService.courseDetails.getValue()?.course?.title }}</h2>
     <p>{{ courseService.courseDetails.getValue()?.course?.description }}</p>
 
-    <button mat-flat-button class="create-quiz-question">Create Quiz Question</button>
-
     @if (authService.user.getValue() && authService.user.getValue()?.is_instructor) {
+      <a routerLink="/pages/quiz-question">
+        <button mat-flat-button class="create-quiz-question">Create Quiz Question</button>
+      </a>
+
       @if (courseService.courseDetails.getValue()?.quizQuestions?.length) {
         <div class="quiz-content">
           <div class="quiz-questions">Quiz questions</div>

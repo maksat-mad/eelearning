@@ -24,8 +24,8 @@ export interface Quiz {
   course: number,
 }
 
-export interface QuizQuestions {
-  question_id: number,
+export interface QuizQuestion {
+  question_id?: number,
   question_text: string,
   option_a: string,
   option_b: string,
@@ -38,5 +38,5 @@ export interface QuizQuestions {
 export interface CourseDetails {
   course: Course,
   quiz: Quiz[],
-  quizQuestions: QuizQuestions[],
+  quizQuestions: QuizQuestion[],
 }
